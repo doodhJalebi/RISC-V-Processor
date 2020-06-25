@@ -15,8 +15,8 @@ module RISC_V_Processor
 
   wire [6:0] opcode;
   wire [4:0] rd, rs1, rs2;
-  wire [2:0] funct3;
-  wire [6:0] funct7;
+  wire [2:0] Funct3;
+  wire [6:0] Funct7;
 
   wire [63:0] readData1, readData2;
 
@@ -97,13 +97,13 @@ module RISC_V_Processor
 
   instruction_parser IP
   (
-    .instruction(instruction), //Coming from Instruction_Memory
+    .instruction(Instruction), //Coming from Instruction_Memory
     .opcode(opcode), //Going to Control Unit
     .rd(rd), //Going to registerFile
-    .funct3(funct3), //Going nowhere
+    .funct3(Funct3), //Going nowhere
     .rs1(rs1), //Going to registerFile
     .rs2(rs2), //Going to registerFile
-    .funct7(funct7) // Going nowhere
+    .funct7(Funct7) // Going nowhere
   );
 
   ALU_Control ALUC
