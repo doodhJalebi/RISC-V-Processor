@@ -70,7 +70,7 @@ module RISC_V_Processor
 
   Adder adder1
   (
-    .a(pc_Out),//Coming from PC out
+    .a(pc_out),//Coming from PC out
     .b(64'd4), // input 4
     .out(adderout) //Going to mux 1
   );
