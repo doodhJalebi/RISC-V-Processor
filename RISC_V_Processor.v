@@ -6,7 +6,6 @@ module RISC_V_Processor
   wire branch;
   wire memRead;
   wire memtoReg;
-  wire [1:0] aluOp;
   wire memWrite;
   wire ALUsrc;
   wire regWrite;
@@ -32,7 +31,7 @@ module RISC_V_Processor
   wire [63:0]ReadData;
   
   wire [31:0] Instruction;
-  reg [4:0] Instruction_Conc;
+  reg [3:0] Instruction_Conc;
 
   wire [63:0] Imm_data;
   reg [63:0] Imm_data_adder; //Left Shifted by 1 Imm_data 
@@ -41,6 +40,8 @@ module RISC_V_Processor
   wire zero;
   
   wire [63:0] WriteData;
+
+  wire [1:0] ALUOp_2bit; // This goes from Control Unit to ALU Control
 
   assign select = branch & zero;
 
@@ -92,7 +93,7 @@ module RISC_V_Processor
      Instruction_Memory IM
   (
     .Inst_Address(pc_out), // Coming from Program Counter
-    .instruction(Instruction) //Outputing to Instruction Parser
+    .Instruction(Instruction) //Outputing to Instruction Parser
   );
 
   instruction_parser IP
@@ -107,7 +108,7 @@ module RISC_V_Processor
   );
 
   ALU_Control ALUC
-  (.ALUOp(aluOp), //Coming from Control unit aluop
+  (.ALUOp(ALUOp_2bit), //Coming from Control unit aluop
   .Funct(Instruction_Conc), //Coming from Instruction (Concatenated)
   .Operation(opcode)); //Going to ALUop of ALU
 
@@ -120,7 +121,7 @@ module RISC_V_Processor
     .MemWrite(memWrite), //Goin to DataMemory memwrite
     .ALUSrc(ALUsrc),//Going to mux 2 sel
     .RegWrite(regWrite), // Going to registerFile regWrite
-    .ALUOp(aluOp) // Going to alu control aluOp
+    .ALUOp(ALUOp_2bit) // Going to alu control aluOp
   );
 
     registerFile rg(
