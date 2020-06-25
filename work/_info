@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Ali Hamza/Desktop/Pipelined-RISC-V-Processor
 vAdder
-Z1 !s110 1593100581
+Z1 !s110 1593106222
 !i10b 1
 !s100 XKPN@`elU36GiUEE^5KD=3
 INnOgzOH`1A@O8b@_[1M>D1
@@ -23,7 +23,7 @@ Z4 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z5 !s108 1593100580.000000
+Z5 !s108 1593106222.000000
 Z6 !s107 tbRISCV.v|instruction_parser.v|RegisterFile.v|RISC_V_Processor.v|Program_Counter.v|MUX64.v|Instruction_Memory.v|Instruction_Fetch.v|DataMemory.v|Control_Unit.v|Adder.v|ALU_Control.v|ALU_64_bit.v|
 Z7 !s90 -reportprogress|300|ALU_64_bit.v|ALU_Control.v|Adder.v|Control_Unit.v|DataMemory.v|Instruction_Fetch.v|Instruction_Memory.v|MUX64.v|Program_Counter.v|RISC_V_Processor.v|RegisterFile.v|instruction_parser.v|tbRISCV.v|
 !s101 -O0
@@ -31,7 +31,7 @@ Z7 !s90 -reportprogress|300|ALU_64_bit.v|ALU_Control.v|Adder.v|Control_Unit.v|Da
 Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
 n@adder
 vALU_64_bit
-!s110 1593100580
+R1
 !i10b 1
 !s100 <dn60RKI6Y;IeUVeW;02@2
 IANzF9[`0AKgGgKDcn7cUD0
@@ -147,7 +147,7 @@ R1
 I1ZjF39FiG6iVY?WAiTO2F2
 R2
 R0
-R3
+w1593105938
 8Instruction_Memory.v
 FInstruction_Memory.v
 L0 1
@@ -234,7 +234,7 @@ R1
 Iok`11ZzN1]`8HjcJLmj0j2
 R2
 R0
-R3
+w1593106218
 8RegisterFile.v
 FRegisterFile.v
 L0 1
@@ -252,11 +252,11 @@ nregister@file
 vRISC_V_Processor
 R1
 !i10b 1
-!s100 BlL7L?bYH94_cGY]Fodmj2
-I2G@^WjzXkJhObHkTAh0fZ0
+!s100 H9hOZCQSj>2K<mbfHUNIJ3
+I`;n__BR`SzbP><7iaJOSD3
 R2
 R0
-R3
+w1593106082
 8RISC_V_Processor.v
 FRISC_V_Processor.v
 L0 1
