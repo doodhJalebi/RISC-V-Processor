@@ -44,7 +44,6 @@ module RISC_V_Processor
   wire [1:0] ALUOp_2bit; // This goes from Control Unit to ALU Control
   wire [3:0] ALUOp_4bit; // This goes from Control Unit Operation to ALU ALUOp
 
-  assign select = branch & zero;
 
   //Left Shifter
   always @ (Imm_data)
@@ -59,7 +58,7 @@ module RISC_V_Processor
 
   always @ (branch)
     begin
-      branchand = branch & zero;
+      branchand = branch & ~zero;
     end
 
   Program_Counter PC
