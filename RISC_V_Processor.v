@@ -59,7 +59,7 @@ module RISC_V_Processor
 
   always @ (branch)
     begin
-      branchand = ~(branch & zero);
+      branchand = branch & zero;
     end
 
   Program_Counter PC
