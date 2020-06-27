@@ -30,6 +30,7 @@ module DataMemory
   always @(Mem_Addr)
     begin
       if (MemRead == 1)
+      begin
         Read_Data = {Data_Memory[Mem_Addr+7],
                         Data_Memory[Mem_Addr+6],
                         Data_Memory[Mem_Addr+5],
@@ -38,6 +39,8 @@ module DataMemory
                         Data_Memory[Mem_Addr+2],
                         Data_Memory[Mem_Addr+1],
                         Data_Memory[Mem_Addr]};
+        $display("Reading data from memory.\nAddress = %b\nData = %b\n\n", Mem_Addr, Read_Data);
+      end
       else
         Read_Data = 0;
     end
