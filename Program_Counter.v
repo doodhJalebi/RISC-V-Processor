@@ -15,7 +15,6 @@ begin
   if(!reset)
     begin
       PC_Out = PC_In;
-      $display("PC_In = %b\nPC_Out = %b\n\n", PC_In, PC_Out);
     end
 end
 
