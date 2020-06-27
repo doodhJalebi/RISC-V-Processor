@@ -1,7 +1,7 @@
 module imm_data_gen
 (
     input [31:0] instruction,
-    output [63:0] imm_data
+    output reg [63:0] imm_data
 );
 
 reg [63:0] temp_data;
@@ -21,10 +21,16 @@ begin
         2'b11 : temp_data[11:0] = {instruction[31], instruction[7], instruction[30:25], instruction[11:8]};
         2'b10 : temp_data[11:0] = {instruction[31], instruction[7], instruction[30:25], instruction[11:8]};
     endcase
+    
+    imm_data = {{52{temp_data[11]}}, temp_data[11:0]};
+    if (select == 2'b11)
+    begin
+        imm_data = imm_data >> 1;
+    end
 end
 
 
-assign imm_data = {{52{temp_data[11]}}, temp_data[11:0]};
+
 
 
 
