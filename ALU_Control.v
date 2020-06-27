@@ -19,7 +19,7 @@ begin
 
     else if (ALUOp == 2'b10)
     begin
-        case (Funct)
+        case (Funct)i
             4'b0000 : Operation = 4'b0010;
             4'b1000 : Operation = 4'b0110;
             4'b0111 : Operation = 4'b0000;
