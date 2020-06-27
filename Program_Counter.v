@@ -7,20 +7,24 @@ module Program_Counter
 
 initial
 begin
-  PC_Out = 64'd0;
+  PC_Out = 64'b0;
 end
 
 always @(posedge clk)
 begin
-  if (reset)
-    begin
-      PC_Out = 64'd0;
-    end
-  else
+  if(!reset)
     begin
       PC_Out = PC_In;
       $display("PC_In = %b\nPC_Out = %b\n\n", PC_In, PC_Out);
     end
+end
+
+always @(reset)
+begin
+  if (reset)
+  begin
+    PC_Out = 64'b0;
+  end
 end
 
 endmodule
