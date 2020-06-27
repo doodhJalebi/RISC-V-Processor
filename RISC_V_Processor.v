@@ -42,6 +42,7 @@ module RISC_V_Processor
   wire [63:0] WriteData;
 
   wire [1:0] ALUOp_2bit; // This goes from Control Unit to ALU Control
+  wire [3:0] ALUOp_4bit; // This goes from Control Unit Operation to ALU ALUOp
 
   assign select = branch & zero;
 
@@ -58,7 +59,7 @@ module RISC_V_Processor
 
   always @ (branch)
     begin
-      branchand = branch & zero;
+      branchand = ~(branch & zero);
     end
 
   Program_Counter PC
@@ -110,7 +111,7 @@ module RISC_V_Processor
   ALU_Control ALUC
   (.ALUOp(ALUOp_2bit), //Coming from Control unit aluop
   .Funct(Instruction_Conc), //Coming from Instruction (Concatenated)
-  .Operation(opcode)); //Going to ALUop of ALU
+  .Operation(ALUOp_4bit)); //Going to ALUop of ALU
 
   Control_Unit CU
   (
@@ -146,7 +147,7 @@ module RISC_V_Processor
     ALU_64_bit ALU(
         .a(readData1), //Coming from registerFile 
         .b(mux2out), //Coming from Mux 2
-        .ALUOp(opcode), //Coming from ALU control
+        .ALUOp(ALUOp_4bit), //Coming from ALU control
         .Result(mem_add), // Going to data memory, MUX 3
         .Zero(zero) // Anding with branch, going to mux 1 select
         );

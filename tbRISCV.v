@@ -2,8 +2,8 @@ module tb
 (
 );
 
-reg clk;
-reg reset;
+reg clk = 1'b0;
+reg reset = 1'b0;
 
 RISC_V_Processor r1
 (
@@ -11,19 +11,11 @@ RISC_V_Processor r1
   .reset(reset)
 );
 
-initial
-begin
-  clk <= 1'b0;
-  reset <= 1'b0;
-end
+
 
 always
 #5 clk = ~clk;
 
-initial
-begin
-#35 reset <= 1'b1;
-#1	reset <= 1'b0;
-end
+
 
 endmodule

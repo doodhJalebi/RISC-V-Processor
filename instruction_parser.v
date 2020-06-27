@@ -18,6 +18,7 @@ begin
     rs2 = instruction[24:20];
     funct7 = instruction[31:25];
 
+    $display("Instruction = %b\n", instruction);
     $display("op = %b\nrd = %b\nfunct3 = %b\nrs1 = %b\nrs2 = %b\nfunct7 = %b\n", opcode, rd, funct3, rs1, rs2, funct7);
 end
 

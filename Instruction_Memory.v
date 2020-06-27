@@ -30,5 +30,6 @@ module Instruction_Memory
                     Instruction_Memory[Inst_Address[3:0]+2],
                     Instruction_Memory[Inst_Address[3:0]+1],
                     Instruction_Memory[Inst_Address[3:0]]};
+      $display("Instruction Address: %b", Inst_Address);
     end
 endmodule
