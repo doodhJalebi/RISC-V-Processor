@@ -7,14 +7,14 @@ module Program_Counter
 
 initial
 begin
-  PC_Out = 64'b0;
+  PC_Out = 64'd0;
 end
 
-always @(posedge clk, reset)
+always @(posedge clk)
 begin
   if (reset)
     begin
-      PC_Out = 0;
+      PC_Out = 64'd0;
     end
   else
     begin
