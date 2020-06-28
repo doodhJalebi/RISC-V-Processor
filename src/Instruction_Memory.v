@@ -18,10 +18,10 @@ module Instruction_Memory
         Instruction_Memory[9] = 8'b10000100;
         Instruction_Memory[10] = 8'b00010100;
         Instruction_Memory[11] = 8'b00000000;
-        Instruction_Memory[12] = 8'b01100011;
-        Instruction_Memory[13] = 8'b10001000;
-        Instruction_Memory[14] = 8'b00000100;
-        Instruction_Memory[15] = 8'b00000000;
+        Instruction_Memory[12] = 8'b00100011;
+        Instruction_Memory[13] = 8'b00110100;
+        Instruction_Memory[14] = 8'b10010101;
+        Instruction_Memory[15] = 8'b00000010;
     end
     
     always @(Inst_Address)
