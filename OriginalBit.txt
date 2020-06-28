@@ -1,4 +1,0 @@
-Instruction_Memory[13] = 8'b00110100;
-Instruction_Memory[14] = 8'b10010101;
-Instruction_Memory[12] = 8'b00100011;
-Instruction_Memory[15] = 8'b00000010;
