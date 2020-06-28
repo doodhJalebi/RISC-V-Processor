@@ -1,3 +1,8 @@
 work/
 *.wlf
 transcript
+*.aux
+*.fls
+*log
+*.gz
+*.fdb_latexmk
